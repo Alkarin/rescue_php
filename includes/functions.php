@@ -1,9 +1,4 @@
 <?php
-
-function test(){
-    echo "test";
-}
-
 function parsePokemon($jsonIterator, $connection) {
     $count = 0;
     foreach ($jsonIterator as $key => $val) {
