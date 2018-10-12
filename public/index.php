@@ -38,8 +38,7 @@ if(isset($_GET["search"])){
         new RecursiveArrayIterator(json_decode($jsonRaw, TRUE)),
         RecursiveIteratorIterator::SELF_FIRST);
 
-//    parsePokemon($jsonIterator, $connection);
-
+    parsePokemon($jsonIterator, $connection);
 }
 ?>
 
