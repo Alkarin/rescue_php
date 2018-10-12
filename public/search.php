@@ -1,9 +1,5 @@
 <?php
 
-function atSearch() {
-    echo "at search";
-}
-
 function searchPokemon($connection, $param, $resultArray){
     // Search for names
     $param = mysqli_real_escape_string($connection,$param);
@@ -40,7 +36,10 @@ function searchPokemonType($connection, $param, $resultArray){
         $count++;
     }
 
-    print_r($resultArray);
+    $resultArray = array_unique($resultArray);
+    $json = json_encode($resultArray);
+    // Return result to Angular app
+    print_r($json);
 }
 
 function selectPokemonByType($connection, $id) {
@@ -55,3 +54,4 @@ function selectPokemonByType($connection, $id) {
         }
     }
 }
+

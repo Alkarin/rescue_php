@@ -3,7 +3,13 @@
 <?php require_once("search.php") ?>
 
 
+
 <?php
+// CORS ACCEPTANCE
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+
 // SUPPRESS WARNINGS
 error_reporting(E_ERROR | E_PARSE);
 
@@ -14,8 +20,17 @@ if(isset($_GET["search"])){
     // Find result to return to Angular App
     $resultArray = array();
 
-    // http://localhost:8888/?search=Bulbasaur
-    searchPokemon($connection,$searchParam,$resultArray);
+    if($searchParam === ""){
+
+        $jsonNoResults = "No Results";
+        $jsonNoResults = json_encode($jsonNoResults);
+        print_r($jsonNoResults);
+
+    } else {
+        // search for Pokemon
+        searchPokemon($connection,$searchParam,$resultArray);
+    }
+
 
 } else {
     // Parse JSON
