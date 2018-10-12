@@ -4,9 +4,9 @@
 * `cd public`
 * `clear && php -S localhost:8888 index.php`
 
-#
+## Database commands (mysql)
 
-#### SEE
+#### View contents
 select * from pokemon_type;
 select * from pokemon;
 
@@ -15,19 +15,19 @@ DROP TABLE pokemon_type;
 DROP TABLE pokemon;
 
 
-#### CREATE 
+#### CREATE TABLES
 
-CREATE TABLE pokemon (
+`CREATE TABLE pokemon (
   id INT NOT NULL,
   name varchar(255),
   PRIMARY KEY (id)
-) ENGINE=INNODB;
+) ENGINE=INNODB;`
 
-CREATE TABLE pokemon_type (
+`CREATE TABLE pokemon_type (
   id INT NOT NULL AUTO_INCREMENT,
   pokemon_id INT,
   type varchar(255),
   INDEX par_ind (pokemon_id),
   FOREIGN KEY (pokemon_id) REFERENCES pokemon(id) ON DELETE CASCADE,
   PRIMARY KEY (id)
-) ENGINE=INNODB;
+) ENGINE=INNODB;`
