@@ -2,8 +2,6 @@
 <?php require_once("../includes/functions.php") ?>
 <?php require_once("search.php") ?>
 
-
-
 <?php
 // CORS ACCEPTANCE
 header('Access-Control-Allow-Origin: *');

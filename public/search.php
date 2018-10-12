@@ -26,7 +26,7 @@ function searchPokemonType($connection, $param, $resultArray){
 
     $result = mysqli_query($connection, $query);
 
-//    echo "Result Type: <br>";
+    // echo "Result Type: <br>";
 
     while($row = mysqli_fetch_assoc($result)){
         foreach($row as $pokemon_id => $id){

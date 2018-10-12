@@ -11,7 +11,7 @@ function parsePokemon($jsonIterator, $connection) {
             // name or type
             if($k1 === 'name'){
                 // Array of Name Values
-                //echo "its a name<br>";
+                // echo "its a name<br>";
 
                 // Add Pokemon type to DB
                 echo $k1 . ": " . $v1 . "<br>";
@@ -24,15 +24,13 @@ function parsePokemon($jsonIterator, $connection) {
                 $query .= " '{$count}','{$nameInput}'";
                 $query .= ")";
 
-                echo "Query: " . $query . "<br>";
-
                 $result = mysqli_query($connection, $query);
                 handleQueryResult($result);
                 $count++;
 
             } else if ($k1 === 'types') {
                 // Array of Types
-                //echo "its a type<br>";
+                // echo "its a type<br>";
                 foreach($v1 as $k2 => $v2) {
                     echo $k2 . ": " . $v2 . "<br>";
                     $currentId = $count - 1;
@@ -58,9 +56,9 @@ function parsePokemon($jsonIterator, $connection) {
 function handleQueryResult($result) {
     if($result){
         // Success
-        echo "Success <br>";
+        // echo "Success <br>";
     } else {
         // Failure
-        echo "Failure <br>";
+        // echo "Failure <br>";
     }
 }
