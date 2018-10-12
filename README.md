@@ -1,7 +1,7 @@
 ## README
 
 #### Running locally
-
+* `cd public`
 * `clear && php -S localhost:8888 index.php`
 
 #
